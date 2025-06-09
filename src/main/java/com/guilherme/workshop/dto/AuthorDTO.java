@@ -15,14 +15,30 @@ public class AuthorDTO implements Serializable{
 	}
 
 	public AuthorDTO(User obj) {
-		id = obj.getId();
-		name = obj.getName();
+		setId(obj.getId());
+		setName(obj.getName());
 	}
 
 	public AuthorDTO(String id, String name) {
 		super();
-		this.id = id;
+		this.setId(id);
+		this.setName(name);
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 	
 	
