@@ -1,5 +1,7 @@
 package com.guilherme.workshop.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,5 +19,10 @@ public class PostService {
 	public Post findById(String id) {
 		return repository.findById(id)
 				.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado com ID: " + id));
+	}
+	
+	public List<Post> findByTitle(String text){
+		
+		return repository.searchTitle(text);
 	}
 }
